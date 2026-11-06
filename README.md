@@ -56,7 +56,3 @@ the data set as the unit of analysis. The data sets in `results/names_keel.txt` 
 ## License
 
 Code: MIT (see `LICENSE`). The KEEL data keep their own terms and are not included.
-
-## Citation
-
-Prexawanprasut, T. "Where Should Synthetic Samples Go? An Empirical Study of Allocation Across Minority Sub-Clusters in Oversampling." Submitted to IEEE Access, 2026. (Update with the final reference.)
