@@ -1,0 +1,43 @@
+\begin{table*}[t]
+\centering
+\caption{G-mean per data set (mean over folds and the four fast classifiers; best of the six columns in bold). Unif.: uniform allocation; Diff.: difficulty-proportional allocation; Thr.: threshold tuning on the original data.}
+\label{tab:perdataset}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}lcccccc@{\hspace{12pt}}lcccccc@{}}
+\toprule
+Data set & SMOTE-ENN & SMOTE & Unif. & CAOS & Diff. & Thr. & Data set & SMOTE-ENN & SMOTE & Unif. & CAOS & Diff. & Thr. \\
+\midrule
+iris0 & \textbf{0.999} & \textbf{0.999} & \textbf{0.999} & \textbf{0.999} & \textbf{0.999} & 0.992 & yeast-0-2-5-6\_vs\_3-7-8-9 & \textbf{0.773} & 0.762 & 0.758 & 0.763 & 0.739 & 0.754 \\
+glass-0-1-2-3\_vs\_4-5-6 & \textbf{0.927} & 0.914 & 0.912 & 0.911 & 0.909 & 0.924 & yeast-0-2-5-7-9\_vs\_3-6-8 & \textbf{0.895} & 0.882 & 0.883 & 0.883 & 0.846 & 0.886 \\
+glass0 & 0.759 & \textbf{0.776} & 0.775 & 0.772 & 0.773 & 0.768 & flare-F & \textbf{0.761} & 0.621 & 0.613 & 0.612 & 0.623 & 0.681 \\
+glass1 & 0.686 & \textbf{0.693} & 0.670 & 0.664 & 0.666 & 0.680 & kr-vs-k-zero\_vs\_eight & \textbf{0.958} & 0.953 & 0.950 & 0.950 & 0.932 & 0.923 \\
+glass6 & \textbf{0.915} & 0.910 & 0.907 & 0.904 & 0.898 & 0.903 & winequality-white-3-9\_vs\_5 & 0.499 & 0.437 & 0.448 & 0.442 & 0.459 & \textbf{0.540} \\
+new\_thyroid2 & 0.969 & \textbf{0.975} & 0.971 & 0.969 & 0.966 & 0.965 & yeast1 & \textbf{0.692} & 0.690 & 0.683 & 0.684 & 0.679 & 0.690 \\
+ecoli-0\_vs\_1 & 0.970 & 0.975 & \textbf{0.976} & 0.973 & 0.973 & 0.968 & yeast3 & \textbf{0.907} & 0.880 & 0.878 & 0.878 & 0.871 & 0.876 \\
+ecoli-0-3-4-7\_vs\_5-6 & \textbf{0.895} & 0.887 & 0.854 & 0.850 & 0.816 & 0.886 & yeast4 & \textbf{0.779} & 0.727 & 0.731 & 0.730 & 0.724 & 0.717 \\
+haberman & \textbf{0.616} & 0.586 & 0.568 & 0.577 & 0.581 & 0.581 & yeast5 & \textbf{0.943} & 0.921 & 0.916 & 0.920 & 0.906 & 0.907 \\
+ecoli-0-1-4-7\_vs\_5-6 & \textbf{0.908} & 0.906 & 0.865 & 0.860 & 0.807 & 0.885 & yeast6 & \textbf{0.831} & 0.802 & 0.787 & 0.782 & 0.765 & 0.804 \\
+ecoli-0-1-4-7\_vs\_2-3-5-6 & \textbf{0.876} & 0.867 & 0.831 & 0.831 & 0.799 & 0.862 & poker-8-9\_vs\_6 & 0.676 & 0.672 & 0.665 & \textbf{0.695} & 0.674 & 0.538 \\
+ecoli1 & \textbf{0.888} & 0.866 & 0.862 & 0.860 & 0.856 & 0.861 & winequality-red-4 & \textbf{0.619} & 0.575 & 0.545 & 0.555 & 0.538 & 0.513 \\
+ecoli2 & \textbf{0.920} & 0.905 & 0.891 & 0.887 & 0.853 & 0.900 & abalone-19\_vs\_10-11-12-13 & \textbf{0.586} & 0.525 & 0.537 & 0.540 & 0.525 & 0.432 \\
+ecoli3 & \textbf{0.867} & 0.837 & 0.821 & 0.826 & 0.815 & 0.830 & kddcup-guess\_passwd\_vs\_satan & \textbf{0.994} & \textbf{0.994} & \textbf{0.994} & \textbf{0.994} & 0.994 & 0.987 \\
+led7digit-0-2-4-5-6-7-8-9\_vs\_1 & 0.695 & 0.785 & 0.777 & 0.782 & 0.772 & \textbf{0.813} & car-good & 0.856 & 0.849 & 0.849 & 0.860 & 0.856 & \textbf{0.866} \\
+yeast-1\_vs\_7 & 0.700 & 0.694 & \textbf{0.706} & 0.695 & 0.685 & 0.674 & car-vgood & 0.965 & \textbf{0.969} & 0.968 & 0.968 & 0.968 & 0.965 \\
+page-blocks-1-3\_vs\_4 & \textbf{0.978} & 0.977 & 0.925 & 0.931 & 0.879 & 0.965 & shuttle-c0-vs-c4 & \textbf{0.997} & \textbf{0.997} & 0.996 & 0.996 & 0.997 & 0.996 \\
+yeast-0-3-5-9\_vs\_7-8 & \textbf{0.687} & 0.660 & 0.640 & 0.640 & 0.615 & 0.639 & abalone-20\_vs\_8-9-10 & \textbf{0.770} & 0.726 & 0.689 & 0.691 & 0.675 & 0.637 \\
+yeast-2\_vs\_4 & \textbf{0.883} & 0.863 & 0.866 & 0.869 & 0.856 & 0.865 & poker-8-9\_vs\_5 & \textbf{0.506} & 0.489 & 0.417 & 0.440 & 0.409 & 0.493 \\
+yeast-0-5-6-7-9\_vs\_4 & \textbf{0.765} & 0.743 & 0.727 & 0.730 & 0.726 & 0.733 & kr-vs-k-zero\_vs\_fifteen & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & 0.987 \\
+wisconsin & \textbf{0.966} & 0.961 & 0.961 & 0.962 & 0.962 & 0.964 & kddcup-buffer\_overflow\_vs\_back & 0.988 & 0.988 & 0.989 & \textbf{0.990} & 0.988 & 0.975 \\
+yeast-1-4-5-8\_vs\_7 & \textbf{0.606} & 0.574 & 0.529 & 0.521 & 0.504 & 0.514 & kr-vs-k-one\_vs\_fifteen & 1.000 & 1.000 & \textbf{1.000} & \textbf{1.000} & 1.000 & 0.989 \\
+abalone9-18 & \textbf{0.734} & 0.708 & 0.711 & 0.709 & 0.724 & 0.705 & segment0 & 0.990 & 0.990 & \textbf{0.991} & 0.990 & 0.988 & 0.986 \\
+pima & \textbf{0.728} & 0.715 & 0.717 & 0.714 & 0.712 & 0.711 & abalone-17\_vs\_7-8-9-10 & \textbf{0.803} & 0.758 & 0.740 & 0.734 & 0.730 & 0.712 \\
+vehicle0 & 0.939 & 0.944 & \textbf{0.945} & 0.943 & 0.943 & 0.942 & kr-vs-k-zero-one\_vs\_draw & \textbf{0.983} & 0.980 & 0.979 & 0.979 & 0.975 & 0.979 \\
+vehicle1 & \textbf{0.771} & 0.764 & 0.766 & 0.762 & 0.765 & 0.749 & kr-vs-k-three\_vs\_eleven & \textbf{0.995} & 0.995 & 0.994 & 0.994 & 0.994 & 0.987 \\
+vehicle2 & 0.951 & 0.957 & 0.956 & \textbf{0.957} & 0.955 & 0.955 & shuttle-2\_vs\_5 & 1.000 & 1.000 & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & 0.998 \\
+vehicle3 & \textbf{0.775} & 0.745 & 0.747 & 0.743 & 0.743 & 0.730 & abalone19 & \textbf{0.585} & 0.542 & 0.513 & 0.498 & 0.528 & 0.412 \\
+yeast-1-2-8-9\_vs\_7 & \textbf{0.602} & 0.590 & 0.579 & 0.578 & 0.592 & 0.572 & page-blocks0 & \textbf{0.936} & 0.927 & 0.895 & 0.897 & 0.920 & 0.915 \\
+vowel0 & 0.978 & 0.978 & \textbf{0.979} & 0.978 & 0.976 & 0.976 &  &  &  &  &  &  &  \\
+\bottomrule
+\end{tabular}
+\end{table*}
