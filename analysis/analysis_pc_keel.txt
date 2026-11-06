@@ -1,0 +1,38 @@
+=== PRE-SPECIFIED CONFIRMATORY TESTS (KEEL, 59 datasets; Holm over 4) ===
+                                         hypothesis  n_datasets  mean_diff   ci_lo   ci_hi  n_pos  p_two_sided  p_holm
+    H1 uniform-SMOTE, smallest clusters (expect >0)          55     0.0221  0.0006  0.0457     27       0.0229  0.0458
+     H2 uniform-SMOTE, largest clusters (expect <0)          59    -0.0290 -0.0398 -0.0192      7       0.0000  0.0000
+H3 uniform-difficulty, easiest clusters (expect >0)          59     0.0192  0.0111  0.0281     33       0.0000  0.0000
+    H4 uniform-SMOTE, sparsest clusters (expect >0)          59     0.0009 -0.0073  0.0089     24       0.8365  0.8365
+
+=== EXPLORATORY: all terciles x contrasts (unadjusted p) ===
+      size/low : uniform-SMOTE +0.022 (p=0.023) | uniform-Alloc- -0.006 (p=0.469) | difficulty-SMOTE +0.028 (p=0.003)
+      size/mid : uniform-SMOTE +0.001 (p=0.959) | uniform-Alloc- -0.002 (p=0.951) | difficulty-SMOTE +0.003 (p=0.714)
+      size/high: uniform-SMOTE -0.029 (p=0.000) | uniform-Alloc- +0.007 (p=0.111) | difficulty-SMOTE -0.036 (p=0.000)
+  sparsity/low : uniform-SMOTE -0.034 (p=0.000) | uniform-Alloc- +0.006 (p=0.297) | difficulty-SMOTE -0.040 (p=0.000)
+  sparsity/mid : uniform-SMOTE +0.001 (p=0.247) | uniform-Alloc- +0.002 (p=0.893) | difficulty-SMOTE -0.001 (p=0.342)
+  sparsity/high: uniform-SMOTE +0.001 (p=0.837) | uniform-Alloc- -0.000 (p=0.835) | difficulty-SMOTE +0.001 (p=0.850)
+difficulty/low : uniform-SMOTE -0.011 (p=0.023) | uniform-Alloc- +0.019 (p=0.000) | difficulty-SMOTE -0.030 (p=0.000)
+difficulty/mid : uniform-SMOTE -0.022 (p=0.000) | uniform-Alloc- +0.010 (p=0.040) | difficulty-SMOTE -0.032 (p=0.000)
+difficulty/high: uniform-SMOTE -0.010 (p=0.061) | uniform-Alloc- -0.020 (p=0.000) | difficulty-SMOTE +0.010 (p=0.116)
+
+synthetic per original point by size tercile:
+method  Alloc-difficulty  Alloc-uniform  SMOTE
+size                                          
+low                75.44          55.44  12.03
+mid                31.69          27.51  15.83
+high               10.04          12.81  18.64
+
+synthetic per original point by sparsity tercile:
+method    Alloc-difficulty  Alloc-uniform  SMOTE
+sparsity                                        
+low                  13.17          13.59  16.27
+mid                  56.12          43.72  15.40
+high                 34.92          29.71  15.84
+
+synthetic per original point by difficulty tercile:
+method      Alloc-difficulty  Alloc-uniform  SMOTE
+difficulty                                        
+low                     8.27          26.02  14.96
+mid                    15.62          25.53  16.76
+high                   75.03          36.72  15.60

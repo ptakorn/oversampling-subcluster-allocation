@@ -1,0 +1,91 @@
+=== A1: size-proportional allocation (dataset-level) ===
+fast gmean Alloc-size-Alloc-uniform: +0.0044 [+0.0013,+0.0079] W34/L23 p=0.054
+fast gmean Alloc-size-SMOTE: -0.0051 [-0.0086,-0.0021] W15/L42 p=0.000104
+fast gmean SMOTE-Alloc-uniform: +0.0096 [+0.0056,+0.0139] W38/L18 p=6.87e-05
+fast ap Alloc-size-Alloc-uniform: +0.0045 [+0.0001,+0.0097] W25/L30 p=0.441
+fast ap Alloc-size-SMOTE: -0.0028 [-0.0050,-0.0009] W18/L38 p=0.00453
+fast ap SMOTE-Alloc-uniform: +0.0073 [+0.0017,+0.0138] W37/L19 p=0.00711
+fast hpn Alloc-size-Alloc-uniform: -0.0007 [-0.0051,+0.0040] W21/L36 p=0.0745
+fast hpn Alloc-size-SMOTE: -0.0008 [-0.0035,+0.0017] W27/L30 p=0.575
+fast hpn SMOTE-Alloc-uniform: +0.0001 [-0.0058,+0.0065] W21/L35 p=0.25
+RF gmean Alloc-size-Alloc-uniform: -0.0001 [-0.0044,+0.0045] W25/L25 p=0.836
+RF gmean Alloc-size-SMOTE: -0.0149 [-0.0226,-0.0085] W13/L36 p=9.85e-05
+RF gmean SMOTE-Alloc-uniform: +0.0148 [+0.0069,+0.0235] W36/L15 p=0.00325
+RF ap Alloc-size-Alloc-uniform: -0.0008 [-0.0050,+0.0029] W27/L23 p=0.927
+RF ap Alloc-size-SMOTE: -0.0026 [-0.0073,+0.0019] W20/L30 p=0.253
+RF ap SMOTE-Alloc-uniform: +0.0018 [-0.0036,+0.0075] W26/L24 p=0.527
+RF hpn Alloc-size-Alloc-uniform: -0.0028 [-0.0075,+0.0016] W20/L30 p=0.286
+RF hpn Alloc-size-SMOTE: +0.0013 [-0.0064,+0.0103] W22/L27 p=0.925
+RF hpn SMOTE-Alloc-uniform: -0.0041 [-0.0128,+0.0044] W22/L29 p=0.253
+share of SMOTE-uniform gap recovered by size (ratio of means): 0.46  spearman across datasets: 0.65
+size alloc Hn/maxshare mean: {'Hn': 0.88, 'maxshare': 0.319}
+
+=== A2: moderators (Spearman between dataset descriptor and G-mean difference to uniform; fast clfs) ===
+SMOTE       vs log10 IR    : rho=-0.00 p=0.988
+SMOTE       vs log10 n_min : rho=-0.15 p=0.263
+SMOTE       vs log10 n     : rho=-0.17 p=0.188
+SMOTE       vs d           : rho=-0.23 p=0.085
+Size        vs log10 IR    : rho=+0.16 p=0.229
+Size        vs log10 n_min : rho=-0.10 p=0.449
+Size        vs log10 n     : rho=+0.07 p=0.589
+Size        vs d           : rho=-0.31 p=0.015
+Difficulty  vs log10 IR    : rho=-0.05 p=0.707
+Difficulty  vs log10 n_min : rho=-0.01 p=0.915
+Difficulty  vs log10 n     : rho=-0.10 p=0.453
+Difficulty  vs d           : rho=+0.09 p=0.499
+CAOS        vs log10 IR    : rho=+0.19 p=0.151
+CAOS        vs log10 n_min : rho=-0.07 p=0.574
+CAOS        vs log10 n     : rho=+0.11 p=0.418
+CAOS        vs d           : rho=+0.05 p=0.699
+SMOTE-ENN   vs log10 IR    : rho=+0.02 p=0.853
+SMOTE-ENN   vs log10 n_min : rho=-0.07 p=0.602
+SMOTE-ENN   vs log10 n     : rho=-0.06 p=0.641
+SMOTE-ENN   vs d           : rho=-0.23 p=0.075
+(20 tests, unadjusted; expect ~1 at p<.05 by chance)
+by n_min tercile (mean diff to uniform):
+              SMOTE    Size  Difficulty    CAOS  SMOTE-ENN
+log10 n_min                                               
+small        0.0183  0.0061     -0.0134  0.0005     0.0364
+mid          0.0073  0.0052     -0.0047  0.0005     0.0238
+large        0.0030  0.0019     -0.0029 -0.0000     0.0108
+by IR tercile:
+           SMOTE    Size  Difficulty    CAOS  SMOTE-ENN
+log10 IR                                               
+low       0.0044  0.0024     -0.0044 -0.0011     0.0120
+mid       0.0145  0.0114     -0.0138  0.0000     0.0271
+high      0.0100 -0.0001     -0.0032  0.0020     0.0322
+
+=== A3: source-family robustness ===
+families (size>1): {'yeast': 13, 'ecoli': 7, 'abalone': 5, 'kr-vs-k': 5, 'glass': 4, 'vehicle': 4, 'page-blocks': 2, 'winequality': 2, 'poker': 2, 'kddcup': 2, 'car': 2, 'shuttle': 2} | number of groups: 21
+gmean SMOTE-Alloc-uniform: group-mean +0.0083 [+0.0035,+0.0138] groups>0 14/21 Wilcoxon(groups) p=0.00719 | dataset-level +0.0096
+gmean Alloc-difficulty-Alloc-uniform: group-mean -0.0025 [-0.0060,+0.0007] groups>0 7/21 Wilcoxon(groups) p=0.0859 | dataset-level -0.0070
+gmean CAOS-a0.5-Alloc-uniform: group-mean +0.0015 [-0.0007,+0.0047] groups>0 9/21 Wilcoxon(groups) p=0.765 | dataset-level +0.0003
+gmean SMOTE-ENN-Alloc-uniform: group-mean +0.0200 [+0.0032,+0.0385] groups>0 15/21 Wilcoxon(groups) p=0.00897 | dataset-level +0.0237
+gmean Alloc-size-Alloc-uniform: group-mean +0.0046 [+0.0001,+0.0097] groups>0 11/21 Wilcoxon(groups) p=0.412 | dataset-level +0.0044
+ap SMOTE-Alloc-uniform: group-mean +0.0024 [-0.0023,+0.0083] groups>0 11/21 Wilcoxon(groups) p=0.794 | dataset-level +0.0073
+ap Alloc-difficulty-Alloc-uniform: group-mean -0.0069 [-0.0112,-0.0034] groups>0 4/21 Wilcoxon(groups) p=0.00132 | dataset-level -0.0127
+ap CAOS-a0.5-Alloc-uniform: group-mean -0.0000 [-0.0022,+0.0031] groups>0 6/21 Wilcoxon(groups) p=0.145 | dataset-level -0.0004
+ap SMOTE-ENN-Alloc-uniform: group-mean -0.0104 [-0.0231,+0.0003] groups>0 4/21 Wilcoxon(groups) p=0.0304 | dataset-level -0.0057
+ap Alloc-size-Alloc-uniform: group-mean -0.0003 [-0.0039,+0.0043] groups>0 7/21 Wilcoxon(groups) p=0.313 | dataset-level +0.0045
+SMOTE-uniform G-mean leaving out one family: {'yeast': np.float64(0.0099), 'ecoli': np.float64(0.0081), 'abalone': np.float64(0.0092), 'kr-vs-k': np.float64(0.0104), 'glass': np.float64(0.0097), 'vehicle': np.float64(0.0103), 'page-blocks': np.float64(0.0084), 'winequality': np.float64(0.0095), 'poker': np.float64(0.0085), 'kddcup': np.float64(0.0099), 'car': np.float64(0.0099), 'shuttle': np.float64(0.0099)}
+range leave-one-family-out: 0.0081 0.0104
+               mean  count
+abalone      0.0139      5
+car          0.0002      2
+ecoli        0.0204      7
+glass        0.0074      4
+kddcup      -0.0008      2
+kr-vs-k      0.0009      5
+page-blocks  0.0417      2
+poker        0.0392      2
+shuttle      0.0006      2
+vehicle     -0.0007      4
+winequality  0.0096      2
+yeast        0.0081     13
+
+=== A4: selected rho / lambda (all fast-classifier folds) ===
+SMOTE-rho-G rho: {0.0: 0.148, 0.25: 0.181, 0.5: 0.17, 0.75: 0.215, 1.0: 0.286}
+V3-both-G rho: {0.0: 0.132, 0.25: 0.227, 0.5: 0.162, 0.75: 0.192, 1.0: 0.287}
+V3-both-G lam: {0.0: 0.231, 0.5: 0.238, 1.0: 0.531}
+V2-lam(rho=1)-G lam: {0.0: 0.244, 0.5: 0.236, 1.0: 0.52}
+V1-rho(unif)-G rho: {0.0: 0.154, 0.25: 0.199, 0.5: 0.156, 0.75: 0.195, 1.0: 0.296}
